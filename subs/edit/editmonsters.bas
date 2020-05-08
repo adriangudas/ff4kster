@@ -1,3 +1,20 @@
+#include once "crt.bi"
+
+sub bubbleSortMonsterNames()
+    dim as integer endsortflag=1
+	
+    while( endsortflag )
+        endsortflag = 0
+        for j as integer = 1 to total_monsters-1
+            if strcmp(monsters(j).name, monsters(j+1).name) > 0 then
+                swap monsters(j), monsters(j+1)
+				
+                endsortflag = 1
+            endif
+        next
+    wend
+end sub
+
 sub EditMonsters()
 
  dim select_monster as BlueMenu
@@ -16,6 +33,9 @@ sub EditMonsters()
  dim reaction_menu as AIMenu
  
  select_monster.max_rows = screen_height
+
+ bubbleSortMonsterNames()
+
  for i as Integer = 1 to total_monsters
   select_monster.AddOption(monsters(i).name)
  next
