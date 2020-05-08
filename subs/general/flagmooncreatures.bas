@@ -66,4 +66,17 @@ sub FlagMoonCreatures()
   'if monsters(i).lunar then monsters(i).name = FF4Text("-") + monsters(i).name
  'next
 
+ ' set lunar to true manually for moon bosses (hack).
+ ' a proper implementation would be to determine lunar from the boss event call location. 
+ monsters(217).lunar = true 'Zeromus
+ monsters(201).lunar = true 'Zeromus
+ monsters(202).lunar = true 'Zeromus
+ monsters(200).lunar = true 'Zemus
+ monsters(191).lunar = true 'Bahamut
+ monsters(159).lunar = true 'Pale Dim
+ monsters(155).lunar = true 'Ogopogo
+ monsters(153).lunar = true 'Wyvern
+ monsters(150).lunar = true 'D. Lunar
+ monsters(108).lunar = true 'Plague
+
 end sub
